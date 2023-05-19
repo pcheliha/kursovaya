@@ -24,10 +24,10 @@ def test_sort_operations():
                                                       'currency': {'name': 'руб.', 'code': 'RUB'}},
                                   'description': 'Открытие вклада', 'to': 'Счет 77613226829885488381'}]
 
-test_operetion = {'id': 801684332, 'state': 'EXECUTED', 'date': '2019-11-05T12:04:13.781725',
-                                  'operationAmount': {'amount': '21344.35',
-                                                      'currency': {'name': 'руб.', 'code': 'RUB'}},
-                                  'description': 'Открытие вклада', 'to': 'Счет 77613226829885488381'}
+test_operetion = {'id': 114832369, 'state': 'EXECUTED', 'date': '2019-12-07T06:17:14.634890',
+                                  'operationAmount': {'amount': '48150.39', 'currency': {'name': 'USD', 'code': 'USD'}},
+                                  'description': 'Перевод организации', 'from': 'Visa Classic 2842878893689012',
+                                  'to': 'Счет 35158586384610753655'}
 
 
 
@@ -35,8 +35,12 @@ operation1 = Operations(test_operetion)
 
 
 def test_date():
-    assert operation1.date() ==  '05.11.2019'
-    assert
+    assert operation1.date() == '05.11.2019'
+    assert operation1.organizations() == 'Открытие вклада'
+    assert operation1.from_() == None
+    assert operation1.where() == "Счет **8381"
+    assert operation1.operationAmount() == "21344.35 руб."
+    assert operation1.hiding_card() == 'Visa 2842 87** **** 9012'
 
 
 
