@@ -1,4 +1,4 @@
-# импортируем библиотеку jsonimport json
+# импортируем библиотеку json
 import json
 from datetime import datetime
 
@@ -17,4 +17,3 @@ def sort_operations():
             new_operations.append(i)
     return new_operations[0:5]
 
-print(sort_operations())

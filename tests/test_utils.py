@@ -1,5 +1,5 @@
 from utils.function import sort_operations
-
+from utils.class_operations import Operations
 
 def test_sort_operations():
     assert sort_operations() == [{'id': 863064926, 'state': 'EXECUTED', 'date': '2019-12-08T22:46:21.935582',
@@ -23,3 +23,22 @@ def test_sort_operations():
                                   'operationAmount': {'amount': '21344.35',
                                                       'currency': {'name': 'руб.', 'code': 'RUB'}},
                                   'description': 'Открытие вклада', 'to': 'Счет 77613226829885488381'}]
+
+test_operetion = {'id': 801684332, 'state': 'EXECUTED', 'date': '2019-11-05T12:04:13.781725',
+                                  'operationAmount': {'amount': '21344.35',
+                                                      'currency': {'name': 'руб.', 'code': 'RUB'}},
+                                  'description': 'Открытие вклада', 'to': 'Счет 77613226829885488381'}
+
+
+
+operation1 = Operations(test_operetion)
+
+
+def test_date():
+    assert operation1.date() ==  '05.11.2019'
+    assert
+
+
+
+
+
